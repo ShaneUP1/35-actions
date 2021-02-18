@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { createBlog } from '../../actions/blogActions';
-import { useDispatch } from '../../state/BlogProvider';
 import './BlogForm.css';
 
 

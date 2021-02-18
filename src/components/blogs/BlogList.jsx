@@ -1,7 +1,7 @@
 import React from 'react';
 import Blog from './Blog';
-import { useSelector } from '../../state/BlogProvider';
 import { getBlogs } from '../../selectors/blogSelector';
+import { useSelector } from 'react-redux';
 
 const BlogList = () => {
   const blogs = useSelector(getBlogs);
