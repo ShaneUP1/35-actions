@@ -1,5 +1,12 @@
 import React from 'react';
+import BlogList from '../blogs/BlogList';
+import BlogForm from '../form/BlogForm';
 
 export default function App() {
-  return <h1>My Blog</h1>;
+  return (
+    <>
+      <BlogForm />
+      <BlogList />
+    </>
+  );
 }
