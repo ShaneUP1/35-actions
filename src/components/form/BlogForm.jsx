@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createBlog } from '../../actions/blogActions';
 import { useDispatch } from '../../state/BlogProvider';
+import './BlogForm.css';
 
 
 const BlogForm = () => {
