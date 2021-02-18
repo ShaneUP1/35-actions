@@ -14,6 +14,7 @@ describe('blog actions', () => {
     });
 
     const deleteAction = deleteBlog('Blog Title 1');
+    
     expect(deleteAction).toEqual({
       type: DELETE_BLOG,
       payload: 'Blog Title 1'
