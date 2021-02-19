@@ -3,24 +3,24 @@ import { createComment, CREATE_COMMENT, deleteComment, DELETE_COMMENT } from './
 
 describe('comment actions', () => {
   it('creates a CREATE_COMMENT action and a DELETE_COMMENT action', () => {
-    const action = createComment({
-      postTitle: 'Blog Post Title',
-      postComment: 'This was a great post.'
-    });
+    const action = createComment(0, 'This was a great post.');
 
     expect(action).toEqual({
       type: CREATE_COMMENT,
       payload: {
-        postTitle: 'Blog Post Title',
-        postComment: 'This was a great post.'
+        postIndex: 0,
+        comment: 'This was a great post.'
       }
     });
     
-    const deleteAction = deleteComment('This was a great post.');
+    const deleteAction = deleteComment(0, 0);
     
     expect(deleteAction).toEqual({
       type: DELETE_COMMENT,
-      payload: 'This was a great post.'
+      payload: {
+        postIndex: 0,
+        commentIndex: 0
+      }
     });
   });
 });
