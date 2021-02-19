@@ -21,7 +21,7 @@ const Comment = ({ postIndex, comment, commentIndex }) => {
 Comment.propTypes = {
   comment: PropTypes.string.isRequired,
   commentIndex: PropTypes.number.isRequired,
-  postIndex: PropTypes.number.isRequired
+  postIndex: PropTypes.string.isRequired
 };
 
 export default Comment;
