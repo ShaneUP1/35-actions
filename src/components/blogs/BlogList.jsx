@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 const BlogList = () => {
   const blogs = useSelector(getBlogs);
 
-  const blogElements = blogs.map(blog => (
+  const blogElements = blogs.map((blog, i) => (
     <li key={blog.title}>
-      <Blog {...blog} />
+      <Blog {...blog} postIndex={i} />
     </li>
   ));
 
