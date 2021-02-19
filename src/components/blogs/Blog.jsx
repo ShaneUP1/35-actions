@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from '../../state/BlogProvider';
 import { deleteBlog } from '../../actions/blogActions';
+import { useDispatch } from 'react-redux';
 
 const Blog = ({ title, body }) => {
   const dispatch = useDispatch();
