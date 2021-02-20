@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { deleteBlog } from '../../actions/blogActions';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteAllComments } from '../../actions/commentActions';
 
 const Blog = ({ title, body, postIndex }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(deleteBlog(title));
+    dispatch(deleteAllComments(postIndex));
   };
 
   return (

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { createComment, CREATE_COMMENT, deleteComment, DELETE_COMMENT } from './commentActions';
+import { createComment, CREATE_COMMENT, deleteAllComments, deleteComment, DELETE_ALL_COMMENTS, DELETE_COMMENT } from './commentActions';
 
 describe('comment actions', () => {
   it('creates a CREATE_COMMENT action and a DELETE_COMMENT action', () => {
@@ -21,6 +21,13 @@ describe('comment actions', () => {
         postIndex: 0,
         commentIndex: 0
       }
+    });
+
+    const deleteAllAction = deleteAllComments(0);
+
+    expect(deleteAllAction).toEqual({
+      type: DELETE_ALL_COMMENTS,
+      payload: 0
     });
   });
 });

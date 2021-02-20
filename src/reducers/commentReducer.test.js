@@ -1,4 +1,4 @@
-import { createComment, deleteComment } from '../actions/commentActions';
+import { createComment, deleteAllComments, deleteComment } from '../actions/commentActions';
 import reducer from './commentReducer';
 
 describe('Comment Reducer', () => {
@@ -28,6 +28,21 @@ describe('Comment Reducer', () => {
     
     expect(newState).toEqual({
       0: ['great post'],
+      1: ['nice']
+    });
+  });
+
+  it('deletes all comments with DELETE_ALL_COMMENTS action', () => {
+    const state = {
+      0: ['great post', 'good work'],
+      1: ['nice']
+    };
+
+    const deleteAllAction = deleteAllComments(0);
+    const newState = reducer(state, deleteAllAction);
+
+    expect(newState).toEqual({
+      0: [],
       1: ['nice']
     });
   });
